@@ -1,18 +1,13 @@
 # ECommerceAPI
 PHP API serving MySQL data to ReactJS client. Handles Products, Users, Comments, Cart, and Orders. Tested with Postman. Clean, secure codebase.
 
-##
- Database Schema
---
--- Database: `cartdb`
---
+## Database Schema
 
--- --------------------------------------------------------
+ Database: `cartdb`
 
---
--- Table structure for table `cart`
---
+### Table structure for table `cart`
 
+```
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
   `cart_id` int NOT NULL AUTO_INCREMENT,
@@ -21,13 +16,11 @@ CREATE TABLE IF NOT EXISTS `cart` (
   PRIMARY KEY (`cart_id`),
   KEY `user_FK_cart` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
--- --------------------------------------------------------
+### Table structure for table `cart_items`
 
---
--- Table structure for table `cart_items`
---
-
+```
 DROP TABLE IF EXISTS `cart_items`;
 CREATE TABLE IF NOT EXISTS `cart_items` (
   `item_id` int NOT NULL AUTO_INCREMENT,
@@ -40,12 +33,11 @@ CREATE TABLE IF NOT EXISTS `cart_items` (
   UNIQUE KEY `product_id` (`product_id`,`cart_id`),
   KEY `cart_FK_citems` (`cart_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
--- --------------------------------------------------------
 
---
--- Table structure for table `comments`
---
+### Table structure for table `comments`
+
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
