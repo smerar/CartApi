@@ -253,7 +253,7 @@ ALTER TABLE `user_address`
   ADD CONSTRAINT `user_details_user_id_FK` FOREIGN KEY (`user_id`) REFERENCES `user_details` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ```
 
-## Constraints for table `user_review_images`
+#### Constraints for table `user_review_images`
 ```
 ALTER TABLE `user_review_images`
   ADD CONSTRAINT `comment_FK_revImg` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`comment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
