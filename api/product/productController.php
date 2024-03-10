@@ -90,15 +90,10 @@ function displayProductsByCategory($categoryParams){
        return json_encode($data);
 
     }
-
-
-
-
 }
 //..............................list category...................................
 function listCategory()
 {
-
     $connection= mysqli_connect('localhost','root','','ecommerce');
     $query="SELECT * FROM product_category";
     $execute=mysqli_query($connection,$query);
@@ -134,10 +129,7 @@ function listCategory()
         ];
         header("HTTP/1.0 500 Internal Server Error");
        return json_encode($data);
-
     }
-
-
 }
 //.............................validation methods...............................
 
