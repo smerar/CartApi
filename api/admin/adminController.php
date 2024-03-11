@@ -1,10 +1,5 @@
 <?php 
-
-
 //........................... To add products to product table in database................................
-
-
-
 
 function addProducts($products){
 
@@ -18,7 +13,7 @@ function addProducts($products){
     $no_of_days = mysqli_real_escape_string($connection,$products->no_of_days);
     $category=mysqli_real_escape_string($connection,$products->category);
     
-    //Emptty Data Validation
+    //Empty Data Validation
     if(empty(trim($products->description)))
     {
         return validateEmptyProductInput('Enter the product description');
@@ -53,7 +48,7 @@ function addProducts($products){
         {
             $data =[
                 'status'=>201,
-                'message'=>'Customer created successfully',
+                'message'=>'Product added successfully',
             ];
             return json_encode($data);
         }
@@ -69,8 +64,6 @@ function addProducts($products){
     }
     
     }
-
-
  function validateEmptyProductInput($message){
 
     $data=[
